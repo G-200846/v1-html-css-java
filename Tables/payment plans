@@ -1,0 +1,7 @@
+CREATE TABLE PaymentPlans (
+    plan_id INT AUTO_INCREMENT PRIMARY KEY,
+    plan_name VARCHAR(50) NOT NULL,
+    description TEXT,
+    duration_in_months INT,
+    price DECIMAL(10, 2)
+);

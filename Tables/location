@@ -1,0 +1,5 @@
+CREATE TABLE Locations (
+    location_id INT AUTO_INCREMENT PRIMARY KEY,
+    location_name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);

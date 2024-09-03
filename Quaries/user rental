@@ -1,0 +1,2 @@
+INSERT INTO Reviews (user_id, car_id, review_text, rating)
+VALUES (1, 2, 'Great experience!', 5);

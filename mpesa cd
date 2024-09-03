@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Pesa Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .mpesa-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .mpesa-container h2 {
+            margin-bottom: 20px;
+        }
+        .mpesa-container input[type="text"], .mpesa-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .mpesa-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #009c3b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .mpesa-container button:hover {
+            background-color: #007d30;
+        }
+        .success-message {
+            margin-top: 20px;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mpesa-container">
+    <h2>M-Pesa Payment</h2>
+    <form id="mpesa-form">
+        <input type="text" id="phone-number" placeholder="Enter your phone number" required>
+        <input type="number" id="amount" placeholder="Enter amount to pay" required>
+        <button type="submit">Pay Now</button>
+    </form>
+    <div class="success-message" id="success-message">
+        Payment successful! Thank you for using M-Pesa.
+    </div>
+</div>
+
+<script>
+    document.getElementById('mpesa-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var phoneNumber = document.getElementById('phone-number').value;
+        var amount = document.getElementById('amount').value;
+
+        if (phoneNumber && amount) {
+            document.getElementById('success-message').style.display = 'block';
+        } else {
+            alert('Please fill in all the details.');
+        }
+    });
+</script>
+
+</body>
+</html>

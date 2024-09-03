@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration and Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-form" id="signup-form">
+      <h2>Sign Up</h2>
+      <form action="/signup" method="post">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="username" required>
+
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="email" required>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="auth-form" id="signin-form" style="display: none;">
+      <h2>Sign In</h2>
+      <form action="/signin" method="post">
+        <label for="signin-email">Email:</label>
+        <input type="email" id="signin-email" name="email" required>
+
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" name="password" required>
+
+        <a href="/index.html"><s<button type="submit">Sign In</button></a>
+      </form>
+      <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      var signupForm = document.getElementById('signup-form');
+      var signinForm = document.getElementById('signin-form');
+
+      if (signupForm.style.display === 'none') {
+        signupForm.style.display = 'block';
+        signinForm.style.display = 'none';
+      } else {
+        signupForm.style.display = 'none';
+        signinForm.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
